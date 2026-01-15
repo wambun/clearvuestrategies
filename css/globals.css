@@ -27,12 +27,14 @@
     --input: 240 5.9% 90%;
     --radius: 0.5rem;
 
-    /* ClearVue Strategies Custom Properties */
-    --clearvue-blue: #4F7AC2;
-    --clearvue-navy: #001F3F;
-    --clearvue-light-bg: #F8FBFE;
-    --clearvue-gray: #717F98;
-    --clearvue-accent-light: #E8F0FE;
+    /* ClearVue Strategies Custom Properties - Framer Template Tokens */
+    --clearvue-blue: rgb(79, 122, 194);
+    --clearvue-navy: rgb(0, 23, 63);
+    --clearvue-dark-blue: rgb(8, 56, 137);
+    --clearvue-light-bg: rgb(248, 251, 254);
+    --clearvue-gray: rgb(143, 154, 174);
+    --clearvue-light-blue: rgb(152, 176, 217);
+    --clearvue-accent-light: rgba(233, 237, 241, 0.4);
   }
 
   html {

@@ -1,15 +1,15 @@
 {
-  "name": "Mevolut",
-  "short_name": "Mevolut",
-  "description": "Manage your money the easy way with Mevolut . Track expenses, send money, and grow your savings – safely and simply. Sign up free today!",
+  "name": "ClearVue Strategies",
+  "short_name": "ClearVue",
+  "description": "Professional CPA, tax, accounting, and financial coaching services. 40 years of trusted expertise helping individuals and small businesses achieve financial clarity.",
   "dir": "auto",
   "lang": "en-US",
   "display": "standalone",
   "orientation": "any",
   "scope": "/",
   "start_url": "/?homescreen=1",
-  "background_color": "#fff",
-  "theme_color": "#fff",
+  "background_color": "#ffffff",
+  "theme_color": "#00173F",
   "icons": [
     {
       "src": "/static/favicons/android-chrome-36x36.png",
@@ -45,7 +45,7 @@
       "src": "/static/favicons/android-chrome-192x192.png",
       "sizes": "192x192",
       "type": "image/png",
-      "purpose": "any"
+      "purpose": "any maskable"
     },
     {
       "src": "/static/favicons/android-chrome-256x256.png",
@@ -63,7 +63,7 @@
       "src": "/static/favicons/android-chrome-512x512.png",
       "sizes": "512x512",
       "type": "image/png",
-      "purpose": "any"
+      "purpose": "any maskable"
     }
   ]
 }

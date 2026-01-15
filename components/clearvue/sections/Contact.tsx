@@ -62,9 +62,9 @@ const quickLinks = [
     primary: false,
   },
   {
-    title: 'Newsletter Signup',
-    description: 'Stay updated with financial tips and news',
-    href: 'https://www.clearvuestrategies.net/newsletter-signup/',
+    title: 'Email Us',
+    description: 'Send us a message with your questions',
+    href: 'mailto:info@clearvuestrategies.net',
     icon: Mail,
     primary: false,
   },
@@ -210,8 +210,12 @@ export function Contact() {
             <AnimatedSection delay={400}>
               <div className="mt-8 rounded-2xl bg-gradient-to-br from-secondary-900 to-secondary-800 p-8 text-white">
                 <div className="flex items-center gap-4">
-                  <div className="flex h-16 w-16 items-center justify-center rounded-full bg-white/10 backdrop-blur-sm">
-                    <User className="h-8 w-8 text-white" />
+                  <div className="h-16 w-16 overflow-hidden rounded-full border-2 border-white/20">
+                    <img
+                      src="https://www.clearvuestrategies.net/wp-content/uploads/2025/02/Paul-Gorman-CPA-768x768.jpg"
+                      alt="Paul Gorman - CPA & Money Coach"
+                      className="h-full w-full object-cover object-top"
+                    />
                   </div>
                   <div>
                     <h4 className="text-xl font-bold">Paul Gorman</h4>

@@ -20,35 +20,35 @@ import {
 } from 'lucide-react';
 
 const calculators = [
-  { name: 'Retirement Calculator', href: 'https://www.clearvuestrategies.net/news-tools/calculators/' },
-  { name: 'Mortgage Calculator', href: 'https://www.clearvuestrategies.net/news-tools/calculators/' },
-  { name: 'Loan Calculator', href: 'https://www.clearvuestrategies.net/news-tools/calculators/' },
-  { name: 'Savings Calculator', href: 'https://www.clearvuestrategies.net/news-tools/calculators/' },
+  { name: 'Retirement Calculator', href: 'https://www.calculator.net/retirement-calculator.html' },
+  { name: 'Mortgage Calculator', href: 'https://www.calculator.net/mortgage-calculator.html' },
+  { name: 'Loan Calculator', href: 'https://www.calculator.net/loan-calculator.html' },
+  { name: 'Savings Calculator', href: 'https://www.calculator.net/savings-calculator.html' },
 ];
 
 const taxResources = [
   {
     title: 'Track Your Refund',
     description: 'Check the status of your federal tax refund',
-    href: 'https://www.clearvuestrategies.net/news-tools/track-your-refund/',
+    href: 'https://www.irs.gov/refunds',
     icon: Search,
   },
   {
     title: 'Tax Calendar',
     description: 'Important tax dates and deadlines',
-    href: 'https://www.clearvuestrategies.net/news-tools/tax-calendar/',
+    href: 'https://www.irs.gov/filing/individuals/when-to-file',
     icon: Calendar,
   },
   {
-    title: 'Tax Blog',
-    description: 'Latest tax tips, news, and strategies',
-    href: 'https://www.clearvuestrategies.net/blog/',
+    title: 'IRS Forms',
+    description: 'Download official IRS tax forms',
+    href: 'https://www.irs.gov/forms-instructions',
     icon: Newspaper,
   },
   {
-    title: 'Tax Links',
+    title: 'IRS Resources',
     description: 'Helpful IRS and government tax resources',
-    href: 'https://www.clearvuestrategies.net/news-tools/tax-links/',
+    href: 'https://www.irs.gov/',
     icon: LinkIcon,
   },
 ];
@@ -57,46 +57,46 @@ const lifeEvents = [
   {
     title: 'Personal Events',
     description: 'Marriage, divorce, birth of a child, and more',
-    href: 'https://www.clearvuestrategies.net/news-tools/life-events/personal-events/',
+    href: '#contact',
     icon: Users,
   },
   {
     title: 'Financial Events',
     description: 'Inheritance, large purchases, investments',
-    href: 'https://www.clearvuestrategies.net/news-tools/life-events/financial-events/',
+    href: '#contact',
     icon: Receipt,
   },
   {
     title: 'Business Events',
     description: 'Starting, expanding, or selling a business',
-    href: 'https://www.clearvuestrategies.net/news-tools/life-events/business-events/',
+    href: '#contact',
     icon: Building,
   },
   {
     title: 'Tax Events',
     description: 'Audits, notices, and tax-related situations',
-    href: 'https://www.clearvuestrategies.net/news-tools/life-events/tax-events/',
+    href: '#contact',
     icon: FileText,
   },
 ];
 
 const additionalResources = [
   {
-    title: 'Financial Terms Glossary',
-    description: 'Understand financial and accounting terminology',
-    href: 'https://www.clearvuestrategies.net/news-tools/financial-terms-glossary/',
+    title: 'IRS Tax Guide',
+    description: 'Comprehensive tax information from the IRS',
+    href: 'https://www.irs.gov/publications/p17',
     icon: BookOpen,
   },
   {
-    title: 'Useful Links',
-    description: 'Curated collection of helpful financial resources',
-    href: 'https://www.clearvuestrategies.net/news-tools/useful-links/',
+    title: 'California FTB',
+    description: 'California Franchise Tax Board resources',
+    href: 'https://www.ftb.ca.gov/',
     icon: ExternalLink,
   },
   {
-    title: 'Cartoon of the Month',
-    description: 'A little humor to brighten your financial day',
-    href: 'https://www.clearvuestrategies.net/news-tools/cartoon-of-the-month/',
+    title: 'QuickBooks Resources',
+    description: 'Bookkeeping and accounting guides',
+    href: 'https://quickbooks.intuit.com/r/bookkeeping/',
     icon: Smile,
   },
 ];
@@ -176,12 +176,10 @@ export function Resources() {
             Life Events & Financial Guidance
           </h3>
           <div className="mb-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            {lifeEvents.map((event, index) => (
+            {lifeEvents.map((event) => (
               <a
                 key={event.title}
                 href={event.href}
-                target="_blank"
-                rel="noopener noreferrer"
                 className="group flex flex-col rounded-xl border border-gray-100 bg-white p-6 shadow-sm transition-all hover:border-primary-200 hover:shadow-md"
               >
                 <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-secondary-100 text-secondary-600 transition-colors group-hover:bg-secondary-900 group-hover:text-white">
@@ -190,7 +188,7 @@ export function Resources() {
                 <h4 className="font-bold text-secondary-900">{event.title}</h4>
                 <p className="mt-1 text-sm text-gray-600">{event.description}</p>
                 <div className="mt-auto flex items-center pt-4 text-sm font-medium text-primary-500">
-                  Learn More <ExternalLink className="ml-1 h-3 w-3" />
+                  Contact Us <ExternalLink className="ml-1 h-3 w-3" />
                 </div>
               </a>
             ))}

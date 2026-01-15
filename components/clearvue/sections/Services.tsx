@@ -1,160 +1,199 @@
 'use client';
 
+import Link from 'next/link';
 import { Container } from '../ui/Container';
-import { SectionHeader } from '../ui/SectionHeader';
-import { ServiceCard } from '../ui/ServiceCard';
 import { AnimatedSection } from '../ui/AnimatedSection';
-import {
-  Calculator,
-  BookOpen,
-  FileText,
-  TrendingUp,
-  Briefcase,
-  Heart,
-  Receipt,
-  Settings,
-} from 'lucide-react';
+import { ArrowUpRight } from 'lucide-react';
 
 const services = [
   {
     title: 'Accounting Services',
     description:
-      'Comprehensive accounting services covering general ledger management to financial statement preparation. We ensure your financial records are accurate and compliant.',
-    icon: Calculator,
+      'Comprehensive accounting covering general ledger management to financial statement preparation.',
+    href: '/services/accounting',
   },
   {
     title: 'Bookkeeping Support',
     description:
-      'Stay organized with reliable bookkeeping support. We track your income and expenses, allowing you to focus on running your business. QuickBooks ProAdvisor certified.',
-    icon: BookOpen,
+      'Stay organized with reliable bookkeeping support. QuickBooks ProAdvisor certified.',
+    href: '/services/bookkeeping',
   },
   {
     title: 'Tax Services',
     description:
-      'Expert tax preparation and forward-looking tax planning. We navigate complex tax laws to optimize your deductions and ensure timely filing submission.',
-    icon: FileText,
+      'Expert tax preparation and forward-looking tax planning to optimize your deductions.',
+    href: '/services/tax-services',
   },
   {
     title: 'Financial Coaching',
     description:
-      'Move from financial stress and uncertainty to calm, clarity, and confidence. Uncover what shapes your financial life and align your money with your values.',
-    icon: TrendingUp,
+      'Move from financial stress to calm, clarity, and confidence.',
+    href: '/services/financial-coaching',
   },
   {
     title: 'Virtual CFO Services',
     description:
-      'Strategic financial advisory and business financial management. Get executive-level financial guidance without the full-time executive cost.',
-    icon: Briefcase,
+      'Strategic financial advisory without the full-time executive cost.',
+    href: '/services/virtual-cfo',
   },
   {
-    title: 'Imago Professional Facilitation',
+    title: 'Imago Facilitation',
     description:
-      'Relationship-focused financial counseling that helps couples and partners align on financial goals and values for a harmonious financial future.',
-    icon: Heart,
-  },
-];
-
-const additionalServices = [
-  {
-    title: 'Software Implementation',
-    description:
-      'Get your business up and running quickly with expert QuickBooks setup and training.',
-    icon: Settings,
-  },
-  {
-    title: 'IRS Representation',
-    description:
-      'Professional representation for tax audits, notices, and IRS communications.',
-    icon: Receipt,
+      'Relationship-focused facilitation for individuals, dyads, and teams.',
+    href: '/services/imago-facilitation',
   },
 ];
 
 export function Services() {
   return (
-    <section id="services" className="bg-white py-20 md:py-28">
+    <section id="services" className="py-20 md:py-28" style={{ backgroundColor: 'rgb(248, 251, 254)' }}>
       <Container size="wide">
-        <SectionHeader
-          label="Our Services"
-          title="Comprehensive Financial Solutions"
-          description="Discover a range of personalized services designed for you. Our dedication ensures your financial peace of mind."
-        />
+        {/* Header - Framer Style */}
+        <div className="mb-16">
+          <AnimatedSection>
+            <div
+              className="mb-4 text-base font-medium"
+              style={{ color: 'rgb(79, 122, 194)' }}
+            >
+              Our Services
+            </div>
+          </AnimatedSection>
+          <AnimatedSection delay={100}>
+            <h2
+              className="text-3xl font-bold leading-tight md:text-4xl lg:text-5xl"
+              style={{ color: 'rgb(0, 23, 63)' }}
+            >
+              Comprehensive Financial Solutions
+            </h2>
+          </AnimatedSection>
+          <AnimatedSection delay={200}>
+            <p
+              className="mt-4 max-w-2xl text-lg"
+              style={{ color: 'rgb(143, 154, 174)' }}
+            >
+              Discover a range of personalized services designed for you. Our dedication ensures your financial peace of mind.
+            </p>
+          </AnimatedSection>
+        </div>
 
-        {/* Main Services Grid */}
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {/* Services List - Framer Style */}
+        <div className="space-y-0">
           {services.map((service, index) => (
-            <ServiceCard
-              key={service.title}
-              title={service.title}
-              description={service.description}
-              icon={service.icon}
-              index={index}
-            />
+            <AnimatedSection key={service.title} delay={index * 100}>
+              <Link
+                href={service.href}
+                className="group flex items-center justify-between border-b py-8 transition-all hover:px-4"
+                style={{ borderColor: 'rgb(143, 154, 174)' }}
+              >
+                <div className="flex-1">
+                  <h3
+                    className="text-xl font-bold md:text-2xl lg:text-3xl"
+                    style={{ color: 'rgb(0, 23, 63)' }}
+                  >
+                    {service.title}
+                  </h3>
+                  <p
+                    className="mt-2 max-w-lg text-base"
+                    style={{ color: 'rgb(143, 154, 174)' }}
+                  >
+                    {service.description}
+                  </p>
+                </div>
+                {/* Circular Arrow Button - Framer Style */}
+                <div
+                  className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full transition-all group-hover:scale-110"
+                  style={{
+                    backgroundColor: 'rgb(79, 122, 194)',
+                  }}
+                >
+                  <ArrowUpRight className="h-5 w-5" style={{ color: 'rgb(255, 255, 255)' }} />
+                </div>
+              </Link>
+            </AnimatedSection>
           ))}
         </div>
 
-        {/* Additional Services */}
-        <AnimatedSection delay={600}>
-          <div className="mt-16 rounded-2xl bg-gradient-to-br from-primary-50 to-white p-8 md:p-12">
-            <h3 className="mb-6 text-center text-2xl font-bold text-secondary-900">
-              Additional Services
-            </h3>
-            <div className="grid gap-6 md:grid-cols-2">
-              {additionalServices.map((service, index) => (
-                <div
-                  key={service.title}
-                  className="flex items-start gap-4 rounded-xl bg-white p-6 shadow-sm"
-                >
-                  <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-lg bg-primary-100">
-                    <service.icon className="h-6 w-6 text-primary-600" />
-                  </div>
-                  <div>
-                    <h4 className="font-bold text-secondary-900">
-                      {service.title}
-                    </h4>
-                    <p className="mt-1 text-gray-600">{service.description}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </AnimatedSection>
-
-        {/* Service Pricing Info */}
+        {/* Pricing Info - Framer Style */}
         <AnimatedSection delay={700}>
-          <div className="mt-12 rounded-2xl border border-gray-100 bg-white p-8 text-center shadow-sm">
-            <h3 className="text-xl font-bold text-secondary-900">
-              Transparent Pricing
-            </h3>
-            <div className="mt-4 grid gap-4 text-left sm:grid-cols-3">
-              <div className="rounded-lg bg-gray-50 p-4">
-                <div className="font-semibold text-secondary-900">
-                  Basic Tax Filing (Form 1040)
+          <div
+            className="mt-20 rounded-2xl p-8 md:p-12"
+            style={{ backgroundColor: 'rgba(233, 237, 241, 0.4)' }}
+          >
+            <div className="grid gap-8 md:grid-cols-2">
+              <div>
+                <div
+                  className="mb-2 text-base font-medium"
+                  style={{ color: 'rgb(79, 122, 194)' }}
+                >
+                  Transparent Pricing
                 </div>
-                <div className="text-2xl font-bold text-primary-500">
-                  $200 - $400
-                </div>
+                <h3
+                  className="text-2xl font-bold md:text-3xl"
+                  style={{ color: 'rgb(0, 23, 63)' }}
+                >
+                  Fair and Clear Service Fees
+                </h3>
+                <p
+                  className="mt-4 text-base"
+                  style={{ color: 'rgb(143, 154, 174)' }}
+                >
+                  Our prices vary based on complexity. Schedule a free consultation for a personalized quote tailored to your needs.
+                </p>
               </div>
-              <div className="rounded-lg bg-gray-50 p-4">
-                <div className="font-semibold text-secondary-900">
-                  Itemized Deductions
+              <div className="grid gap-4 sm:grid-cols-3">
+                <div
+                  className="rounded-xl p-6"
+                  style={{ backgroundColor: 'rgb(255, 255, 255)' }}
+                >
+                  <div
+                    className="text-sm font-medium"
+                    style={{ color: 'rgb(143, 154, 174)' }}
+                  >
+                    Basic Tax Filing
+                  </div>
+                  <div
+                    className="mt-2 text-2xl font-bold"
+                    style={{ color: 'rgb(79, 122, 194)' }}
+                  >
+                    $200 - $400
+                  </div>
                 </div>
-                <div className="text-2xl font-bold text-primary-500">
-                  $300 - $700
+                <div
+                  className="rounded-xl p-6"
+                  style={{ backgroundColor: 'rgb(255, 255, 255)' }}
+                >
+                  <div
+                    className="text-sm font-medium"
+                    style={{ color: 'rgb(143, 154, 174)' }}
+                  >
+                    Itemized Returns
+                  </div>
+                  <div
+                    className="mt-2 text-2xl font-bold"
+                    style={{ color: 'rgb(79, 122, 194)' }}
+                  >
+                    $300 - $700
+                  </div>
                 </div>
-              </div>
-              <div className="rounded-lg bg-gray-50 p-4">
-                <div className="font-semibold text-secondary-900">
-                  Business/Rental Properties
-                </div>
-                <div className="text-2xl font-bold text-primary-500">
-                  $800 - $1,500
+                <div
+                  className="rounded-xl p-6"
+                  style={{ backgroundColor: 'rgb(255, 255, 255)' }}
+                >
+                  <div
+                    className="text-sm font-medium"
+                    style={{ color: 'rgb(143, 154, 174)' }}
+                  >
+                    Business/Rental
+                  </div>
+                  <div
+                    className="mt-2 text-2xl font-bold"
+                    style={{ color: 'rgb(79, 122, 194)' }}
+                  >
+                    $800+
+                  </div>
                 </div>
               </div>
             </div>
-            <p className="mt-4 text-sm text-gray-500">
-              * Prices vary based on complexity. Schedule a free consultation
-              for a personalized quote.
-            </p>
           </div>
         </AnimatedSection>
       </Container>
