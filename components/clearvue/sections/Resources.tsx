@@ -1,0 +1,232 @@
+'use client';
+
+import { Container } from '../ui/Container';
+import { SectionHeader } from '../ui/SectionHeader';
+import { AnimatedSection } from '../ui/AnimatedSection';
+import {
+  Calculator,
+  FileText,
+  Calendar,
+  ExternalLink,
+  Search,
+  BookOpen,
+  Link as LinkIcon,
+  Newspaper,
+  Clock,
+  Users,
+  Building,
+  Receipt,
+  Smile,
+} from 'lucide-react';
+
+const calculators = [
+  { name: 'Retirement Calculator', href: 'https://www.clearvuestrategies.net/news-tools/calculators/' },
+  { name: 'Mortgage Calculator', href: 'https://www.clearvuestrategies.net/news-tools/calculators/' },
+  { name: 'Loan Calculator', href: 'https://www.clearvuestrategies.net/news-tools/calculators/' },
+  { name: 'Savings Calculator', href: 'https://www.clearvuestrategies.net/news-tools/calculators/' },
+];
+
+const taxResources = [
+  {
+    title: 'Track Your Refund',
+    description: 'Check the status of your federal tax refund',
+    href: 'https://www.clearvuestrategies.net/news-tools/track-your-refund/',
+    icon: Search,
+  },
+  {
+    title: 'Tax Calendar',
+    description: 'Important tax dates and deadlines',
+    href: 'https://www.clearvuestrategies.net/news-tools/tax-calendar/',
+    icon: Calendar,
+  },
+  {
+    title: 'Tax Blog',
+    description: 'Latest tax tips, news, and strategies',
+    href: 'https://www.clearvuestrategies.net/blog/',
+    icon: Newspaper,
+  },
+  {
+    title: 'Tax Links',
+    description: 'Helpful IRS and government tax resources',
+    href: 'https://www.clearvuestrategies.net/news-tools/tax-links/',
+    icon: LinkIcon,
+  },
+];
+
+const lifeEvents = [
+  {
+    title: 'Personal Events',
+    description: 'Marriage, divorce, birth of a child, and more',
+    href: 'https://www.clearvuestrategies.net/news-tools/life-events/personal-events/',
+    icon: Users,
+  },
+  {
+    title: 'Financial Events',
+    description: 'Inheritance, large purchases, investments',
+    href: 'https://www.clearvuestrategies.net/news-tools/life-events/financial-events/',
+    icon: Receipt,
+  },
+  {
+    title: 'Business Events',
+    description: 'Starting, expanding, or selling a business',
+    href: 'https://www.clearvuestrategies.net/news-tools/life-events/business-events/',
+    icon: Building,
+  },
+  {
+    title: 'Tax Events',
+    description: 'Audits, notices, and tax-related situations',
+    href: 'https://www.clearvuestrategies.net/news-tools/life-events/tax-events/',
+    icon: FileText,
+  },
+];
+
+const additionalResources = [
+  {
+    title: 'Financial Terms Glossary',
+    description: 'Understand financial and accounting terminology',
+    href: 'https://www.clearvuestrategies.net/news-tools/financial-terms-glossary/',
+    icon: BookOpen,
+  },
+  {
+    title: 'Useful Links',
+    description: 'Curated collection of helpful financial resources',
+    href: 'https://www.clearvuestrategies.net/news-tools/useful-links/',
+    icon: ExternalLink,
+  },
+  {
+    title: 'Cartoon of the Month',
+    description: 'A little humor to brighten your financial day',
+    href: 'https://www.clearvuestrategies.net/news-tools/cartoon-of-the-month/',
+    icon: Smile,
+  },
+];
+
+export function Resources() {
+  return (
+    <section id="resources" className="bg-[#F8FBFE] py-20 md:py-28">
+      <Container size="wide">
+        <SectionHeader
+          label="News & Tools"
+          title="Financial Resources & Tools"
+          description="Access calculators, tax resources, and helpful information to support your financial journey."
+        />
+
+        {/* Calculators Section */}
+        <AnimatedSection>
+          <div className="mb-12 rounded-2xl bg-gradient-to-r from-primary-500 to-primary-600 p-8 text-white md:p-10">
+            <div className="flex flex-col items-center gap-6 md:flex-row md:justify-between">
+              <div className="text-center md:text-left">
+                <div className="mb-2 flex items-center justify-center gap-2 md:justify-start">
+                  <Calculator className="h-6 w-6" />
+                  <h3 className="text-2xl font-bold">Financial Calculators</h3>
+                </div>
+                <p className="text-white/80">
+                  Plan your financial future with our easy-to-use calculators
+                </p>
+              </div>
+              <div className="flex flex-wrap justify-center gap-3">
+                {calculators.map((calc) => (
+                  <a
+                    key={calc.name}
+                    href={calc.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="rounded-lg bg-white/20 px-4 py-2 text-sm font-medium backdrop-blur-sm transition-all hover:bg-white/30"
+                  >
+                    {calc.name}
+                  </a>
+                ))}
+              </div>
+            </div>
+          </div>
+        </AnimatedSection>
+
+        {/* Tax Resources Grid */}
+        <AnimatedSection delay={100}>
+          <h3 className="mb-6 text-xl font-bold text-secondary-900">
+            Tax Resources
+          </h3>
+          <div className="mb-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {taxResources.map((resource, index) => (
+              <a
+                key={resource.title}
+                href={resource.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex flex-col rounded-xl border border-gray-100 bg-white p-6 shadow-sm transition-all hover:border-primary-200 hover:shadow-md"
+              >
+                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-primary-50 text-primary-500 transition-colors group-hover:bg-primary-500 group-hover:text-white">
+                  <resource.icon className="h-6 w-6" />
+                </div>
+                <h4 className="font-bold text-secondary-900">{resource.title}</h4>
+                <p className="mt-1 text-sm text-gray-600">
+                  {resource.description}
+                </p>
+                <div className="mt-auto flex items-center pt-4 text-sm font-medium text-primary-500">
+                  Visit <ExternalLink className="ml-1 h-3 w-3" />
+                </div>
+              </a>
+            ))}
+          </div>
+        </AnimatedSection>
+
+        {/* Life Events Section */}
+        <AnimatedSection delay={200}>
+          <h3 className="mb-6 text-xl font-bold text-secondary-900">
+            Life Events & Financial Guidance
+          </h3>
+          <div className="mb-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {lifeEvents.map((event, index) => (
+              <a
+                key={event.title}
+                href={event.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex flex-col rounded-xl border border-gray-100 bg-white p-6 shadow-sm transition-all hover:border-primary-200 hover:shadow-md"
+              >
+                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-secondary-100 text-secondary-600 transition-colors group-hover:bg-secondary-900 group-hover:text-white">
+                  <event.icon className="h-6 w-6" />
+                </div>
+                <h4 className="font-bold text-secondary-900">{event.title}</h4>
+                <p className="mt-1 text-sm text-gray-600">{event.description}</p>
+                <div className="mt-auto flex items-center pt-4 text-sm font-medium text-primary-500">
+                  Learn More <ExternalLink className="ml-1 h-3 w-3" />
+                </div>
+              </a>
+            ))}
+          </div>
+        </AnimatedSection>
+
+        {/* Additional Resources */}
+        <AnimatedSection delay={300}>
+          <h3 className="mb-6 text-xl font-bold text-secondary-900">
+            Additional Resources
+          </h3>
+          <div className="grid gap-4 sm:grid-cols-3">
+            {additionalResources.map((resource, index) => (
+              <a
+                key={resource.title}
+                href={resource.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex items-start gap-4 rounded-xl border border-gray-100 bg-white p-6 shadow-sm transition-all hover:border-primary-200 hover:shadow-md"
+              >
+                <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-lg bg-gray-100 text-gray-600 transition-colors group-hover:bg-primary-100 group-hover:text-primary-600">
+                  <resource.icon className="h-5 w-5" />
+                </div>
+                <div>
+                  <h4 className="font-bold text-secondary-900">
+                    {resource.title}
+                  </h4>
+                  <p className="mt-1 text-sm text-gray-600">
+                    {resource.description}
+                  </p>
+                </div>
+              </a>
+            ))}
+          </div>
+        </AnimatedSection>
+      </Container>
+    </section>
+  );
+}

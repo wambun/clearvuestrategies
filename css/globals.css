@@ -26,6 +26,17 @@
     --border: 240 5.9% 90%;
     --input: 240 5.9% 90%;
     --radius: 0.5rem;
+
+    /* ClearVue Strategies Custom Properties */
+    --clearvue-blue: #4F7AC2;
+    --clearvue-navy: #001F3F;
+    --clearvue-light-bg: #F8FBFE;
+    --clearvue-gray: #717F98;
+    --clearvue-accent-light: #E8F0FE;
+  }
+
+  html {
+    scroll-behavior: smooth;
   }
 
   .dark {

@@ -1,18 +1,18 @@
-/* Configure colors at https://shipixen.com/color-theme-explorer-shadcn */
+/* ClearVue Strategies - Professional Blue Color Scheme */
 const colors = {
   primary: {
-    lighter: '#fde047',
-    light: '#facc15',
-    main: '#eab308',
-    dark: '#ca8a04',
-    darker: '#a16207',
+    lighter: '#7B9ED4',
+    light: '#5F8AC8',
+    main: '#4F7AC2',
+    dark: '#3D66A8',
+    darker: '#2D5090',
   },
   secondary: {
-    lighter: '#6ee7b7',
-    light: '#34d399',
-    main: '#10b981',
-    dark: '#059669',
-    darker: '#047857',
+    lighter: '#1A3A5C',
+    light: '#0D2847',
+    main: '#001F3F',
+    dark: '#001830',
+    darker: '#001020',
   },
 };
 
