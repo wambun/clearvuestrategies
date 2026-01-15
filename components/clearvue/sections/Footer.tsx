@@ -230,7 +230,7 @@ export function Footer() {
               <img
                 src="/static/images/clearvue-logo.gif"
                 alt="ClearVue Strategies"
-                className="h-8 w-auto"
+                className="h-10 w-auto md:h-12"
               />
             </Link>
             <span style={{ color: 'rgb(143, 154, 174)' }}>

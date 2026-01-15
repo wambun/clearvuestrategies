@@ -130,9 +130,9 @@ export function Hero() {
                 style={{ backgroundColor: 'rgba(255, 255, 255, 0.1)' }}
               >
                 <img
-                  src="https://www.clearvuestrategies.net/wp-content/uploads/2025/02/Paul-Gorman-CPA-768x768.jpg"
-                  alt="Paul Gorman - CPA & Money Coach"
-                  className="h-[500px] w-full object-cover object-top"
+                  src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                  alt="Professional accounting and financial analysis"
+                  className="h-[500px] w-full object-cover"
                 />
               </div>
 

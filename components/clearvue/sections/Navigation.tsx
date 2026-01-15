@@ -104,7 +104,7 @@ export function Navigation() {
             <img
               src="/static/images/clearvue-logo.gif"
               alt="ClearVue Strategies"
-              className="h-10 w-auto"
+              className="h-12 w-auto md:h-14"
             />
           </Link>
 
