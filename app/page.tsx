@@ -4,12 +4,15 @@ import {
   About,
   Services,
   WhyChooseUs,
+  TrustBadges,
   FinancialCoaching,
   Resources,
   FAQ,
   CTA,
   Contact,
   Footer,
+  StickyCTA,
+  ExitIntentPopup,
 } from '@/components/clearvue';
 
 export default function Home() {
@@ -21,6 +24,7 @@ export default function Home() {
         <About />
         <Services />
         <WhyChooseUs />
+        <TrustBadges />
         <FinancialCoaching />
         <Resources />
         <FAQ />
@@ -28,6 +32,8 @@ export default function Home() {
         <Contact />
       </main>
       <Footer />
+      <StickyCTA />
+      <ExitIntentPopup />
     </>
   );
 }
